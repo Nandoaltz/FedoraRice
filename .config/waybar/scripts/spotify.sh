@@ -12,7 +12,7 @@ fi
 if [ "$player" = "spotify" ]; then
     icon=""  # Ícone do Spotify
 else
-    icon=""  # Ícone genérico para navegador (você pode adaptar)
+    icon=""  # Ícone para navegador
 fi
 
 status=$(playerctl status 2>/dev/null)
@@ -30,7 +30,7 @@ artist=$(playerctl metadata artist 2>/dev/null)
 
 text="$icon  $play_icon $artist - $title"
 
-# Limitar o texto a 40 caracteres
+# Limitar o texto a 20 caracteres
 max_length=20
 if [ ${#text} -gt $max_length ]; then
     text="${text:0:$((max_length - 3))}..."
