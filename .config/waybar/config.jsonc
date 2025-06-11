@@ -9,13 +9,11 @@
     "spacing": 4,
 
     "modules-left": [
-          "custom/power",
           "clock",
           "network",
           "custom/spotify",
+          "custom/music",
             "tray"
-          
-          
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -38,6 +36,15 @@
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
+},
+  "custom/music": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/music.sh",
+    "interval": 1,
+    "return-type": "json",
+      "on-click": "~/.config/waybar/scripts/spotify_toggle.sh",
+  "on-scroll-up": "playerctl --player=spotify next",
+  "on-scroll-down": "playerctl --player=spotify previous"
 },
 
     "keyboard-state": {
