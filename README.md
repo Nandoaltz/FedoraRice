@@ -1,4 +1,4 @@
-## Debian com hyprland e waybar 
+## Fedora com hyprland e waybar 
 
 
 ![Tela inicial](TELA.png)
