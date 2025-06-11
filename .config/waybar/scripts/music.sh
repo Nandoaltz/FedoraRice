@@ -4,7 +4,7 @@
 if ! playerctl --player=spotify status &>/dev/null; then
     exit 0
 fi
-
+sleep 0.1
 # Status do player
 status=$(playerctl --player=spotify status 2>/dev/null)
 
