@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sleep 0.1
 # Captura o nome do player ativo
 player=$(playerctl metadata --format '{{playerName}}' 2>/dev/null)
 
@@ -25,8 +25,8 @@ else
     exit 0
 fi
 
-title=$(playerctl metadata title 2>/dev/null)
-artist=$(playerctl metadata artist 2>/dev/null)
+title=$(playerctl metadata title 2>/dev/null | sed 's/"/\\"/g')
+artist=$(playerctl metadata artist 2>/dev/null | sed 's/"/\\"/g')
 
 text="$icon  $play_icon $artist - $title"
 
